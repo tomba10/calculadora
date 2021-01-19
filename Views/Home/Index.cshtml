@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="jumbotron">CALCULADORA en HTML</h1>
+
+    <div id="DivPrincipal">
+
+
+        @* -----Text Box Resultado----- *@
+        <div class="row">
+            <div class="col-8">
+                <input type="text" id="txtResultadoId" />
+            </div>
+        </div>
+
+        @* ----primera linea de numeros---- *@
+        <div class="row">
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(7)">7</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(8)">8</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(9)">9</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-success btn-sm" onclick=" Operar('-')">-</button>
+            </div>
+        </div>
+
+        @* ----segunda linea de numeros---- *@
+        <div class="row">
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(4)">4</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(5)">5</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(6)">6</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-success btn-sm" onclick=" Operar('+')">+</button>
+            </div>
+        </div>
+
+
+        @* ----tercera linea de numeros---- *@
+        <div class="row">
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(1)">1</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(2)">2</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(3)">3</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-success btn-sm" onclick=" Operar('/')">/</button>
+            </div>
+        </div>
+
+
+        @* ----cuarta linea de numeros---- *@
+        <div class="row">
+            <div class="col-4">
+                <button class="MyBotonCalculadora btn btn-primary btn-sm" onclick="MostrarNumero(0)">0</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-success btn-sm" onclick=" Operar('x')">x</button>
+            </div>
+            <div class="col-2">
+                <button class="MyBotonCalculadora btn btn-success btn-sm" onclick=" Operar('=')">=</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    var textResultado = document.getElementById("txtResultadoId");
+    var resultado = 0;
+    var operador = null;
+    
+
+
+    function MostrarNumero(numero) {
+        this.textResultado.value += numero;
+        }
+
+    function Operar(operador) {
+
+        if (this.operador !== null) {
+            switch (this.operador)
+            {
+
+                case "+":
+                    this.resultado += Number.parseInt(textResultado.value);
+                    this.operador = null;
+                    break;
+
+                case "-":
+                    this.resultado -= Number.parseInt(textResultado.value);
+                    this.operador = null;
+                    break;
+
+                case "x":
+                    this.resultado += Number.parseInt(textResultado.value);
+                    this.operador = null;
+                    break;
+
+                case "/":
+                    this.resultado += Number.parseInt(textResultado.value);
+                    this.operador = null;
+                    break;
+
+            }
+            this.textResultado.value = this.resultado;
+
+
+        }
+        else {
+            this.resultado = Number.parseInt(textResultado.value);
+            this.operador = operador;
+            this.textResultado.value = "";
+        }
+        
+        
+    }
+
+  
+</script>
+

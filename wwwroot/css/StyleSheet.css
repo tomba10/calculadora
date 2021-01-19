@@ -1,0 +1,27 @@
+﻿.MyBotonCalculadora {
+    width: 50px;
+}
+
+.MyBotonCero {
+    width: 100px;
+}
+
+#txtResultadoId {
+    width: 204px;
+    height: 50px;
+}
+
+#DivPrincipal {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    border-color: blue;
+    border: solid;
+}
+
+body {
+    background-image: url(matematicas.jpg);
+}
