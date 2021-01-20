@@ -87,18 +87,17 @@
     var textResultado = document.getElementById("txtResultadoId");
     var resultado = 0;
     var operador = null;
-    
+
 
 
     function MostrarNumero(numero) {
         this.textResultado.value += numero;
-        }
+    }
 
     function Operar(operador) {
 
         if (this.operador !== null) {
-            switch (this.operador)
-            {
+            switch (this.operador) {
 
                 case "+":
                     this.resultado += Number.parseInt(textResultado.value);
@@ -129,8 +128,9 @@
             this.resultado = Number.parseInt(textResultado.value);
             this.operador = operador;
             this.textResultado.value = "";
-        } 
+        }
     }
 
 </script>
 
+@* -----pruebaaaaa----- *@
